@@ -1,0 +1,10 @@
+d3Fetch = require('d3-fetch')
+
+response = fetch("https://raw.githubusercontent.com/byuidatascience/data4births/master/data-raw/basketball_births/basketball_births.json")
+
+dat = response.json()
+
+dat3 = d3Fetch.json("https://raw.githubusercontent.com/byuidatascience/data4births/master/data-raw/basketball_births/basketball_births.json")
+
+
+dotplot = Plot.rectY(dat, Plot.binX({y: "count"}, {x: "yrs"})).plot()
